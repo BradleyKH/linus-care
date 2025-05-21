@@ -36,6 +36,15 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+img {
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 h2 {
     color: #333;
 }
@@ -87,6 +96,17 @@ video {
 
 .section-links a:hover {
     background-color: #ddd;
+}
+
+.content-with-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.content {
+    flex-grow: 1;
 }
 
 /* Menu button styles for mobile devices */
@@ -149,5 +169,14 @@ video {
 
     .section-links.show {
         display: flex;
+    }
+
+    .content-with-image {
+        display: block;
+    }
+
+    .image {
+        width: 100%;
+        text-align: center;
     }
 }
