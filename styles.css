@@ -8,6 +8,10 @@ body {
     background-color: #f4f4f4;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 header {
     background: #333;
     color: #fff;
@@ -42,7 +46,62 @@ p {
 
 video {
     max-width: 600px;
-    max-height: 70vh;
+    max-height: 50vh;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.videos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Navigation styles for large screens */
+.section-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    flex-wrap: wrap;
+    z-index: 2000;
+}
+
+.section-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.section-links a:hover {
+    background-color: #ddd;
+}
+
+/* Menu button styles for mobile devices */
+.menu-button {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1000;
 }
 
 /* Responsive styles */
@@ -57,10 +116,38 @@ video {
 
     header {
         padding: 5px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     video {
         height: auto;
         border-radius: 8px;
+    }
+
+    .menu-button {
+        display: block;
+        color: white;
+    }
+
+    .section-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        background-color: #f4f4f4;
+        border-top: 1px solid #ddd;
+        border-bottom: 0;
+    }
+
+    .section-links a {
+        padding: 10px;
+    }
+
+    .section-links.show {
+        display: flex;
     }
 }
